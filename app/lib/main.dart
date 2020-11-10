@@ -69,6 +69,9 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     /* bottomSheet:
+     Text  ('$mbakerdoz'), */
+      
       appBar: AppBar(
         title: Text(_loading ? 'Loading...' : 'Bagels & Breads'),
       ),
@@ -112,7 +115,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           },
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
+     /*  bottomNavigationBar: BottomAppBar(
         child: Row(
           children: [
             //IconButton(icon: Icon(Icons.menu), onPressed: () {}),
@@ -137,7 +140,7 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
         shape: CircularNotchedRectangle(),
         color: Colors.lightBlue,
         notchMargin: 8.0,
-      ),
+      ), */
       //floatingActionButton:
       //    FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
       //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
