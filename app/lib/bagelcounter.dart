@@ -26,8 +26,8 @@ class CounterWidget extends StatefulWidget {
   _CounterWidgetState createState() => _CounterWidgetState();
 }
 
-class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveClientMixin{
-
+class _CounterWidgetState extends State<CounterWidget>
+    with AutomaticKeepAliveClientMixin {
 //added mixin to allow scroll keep item count
 
   int _ecounter = 0;
@@ -39,7 +39,6 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
   @override
   bool get wantKeepAlive => true; //needed for above mix in to work
 
-
   void _incrementCounter() {
     setState(() {
       //track increament   ~/ finds just total bager doz of 13
@@ -50,16 +49,47 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
       _totalbagels++;
       bakerdoz = (_totalbagels ~/ 13);
       _ecounter = (_totalbagels % 13);
-    
+
+      if (bakerdoz > 0) {
+        showModalBottomSheet<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return Container(
+              height: 100,
+              color: Colors.amber,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                     Text('Bakers Doz: $bakerdoz and each: $_ecounter '),
+                    //ElevatedButton(
+                      //child: const Text('Close BottomSheet'),
+                      //onPressed: () => Navigator.pop(context),
+                    //)
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      }
+
+      /*  showBottomSheet(
+            context: context,
+            builder: (context) => Container(
+                  width: 200,
+                  height: 100,
+                  color: Colors.lightBlue,
+                  child: Text('$bakerdoz'),
+                )); */
     });
   }
 
   void _decrementCounter() {
     setState(() {
-      
       if (_totalbagels == 0) {
-
-          // check if zero do not go into -1
+        // check if zero do not go into -1
 
       } else {
         _totalbagels--;
@@ -72,7 +102,6 @@ class _CounterWidgetState extends State<CounterWidget>  with AutomaticKeepAliveC
   @override
   Widget build(BuildContext context) {
     return Material(
-      
       child: Row(
         children: [
           IconButton(
