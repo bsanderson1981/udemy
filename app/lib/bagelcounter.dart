@@ -51,8 +51,11 @@ class _CounterWidgetState extends State<CounterWidget>
       _ecounter = (_totalbagels % 13);
 
       if (bakerdoz > 0) {
-        showModalBottomSheet<void>(
+        showBottomSheet<void>(
           context: context,
+          //isDismissible: false,   make dismissible on click 
+          
+          
           builder: (BuildContext context) {
             return Container(
               height: 100,
