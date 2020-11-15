@@ -47,7 +47,7 @@ class _CounterWidgetState extends State<CounterWidget>
       // TB = 16     BDz = 1   and Bagels = 3 for example...
 
       _totalbagels++;
-      bakerdoz = (_totalbagels ~/ 13);
+      bakerdoz = (    _totalbagels ~/ 13);
       _ecounter = (_totalbagels % 13);
 
       if (bakerdoz > 0) {
