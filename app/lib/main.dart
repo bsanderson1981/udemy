@@ -75,6 +75,8 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
       appBar: AppBar(
         title: Text(_loading ? 'Loading...' : 'Bagels & Breads'),
       ),
+     
+
       body: Container(
         color: Colors.white,
         child: ListView.separated(
@@ -115,6 +117,10 @@ class _JsonParseDemoState extends State<JsonParseDemo> {
           },
         ),
       ),
+
+       bottomNavigationBar: BottomAppBar(
+    color: Colors.white,
+    child: Text('Bakers Doz: $bakerdoz and each: ecounter '),)
      /*  bottomNavigationBar: BottomAppBar(
         child: Row(
           children: [
